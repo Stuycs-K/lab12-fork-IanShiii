@@ -16,7 +16,7 @@ int main() {
 	if (child1PID == 0) {
 		unsigned int time;
 		fread(&time, sizeof(int), 1, file);
-		time = time % 5;
+		time = time % 5 + 1;
 		printf("%d %dsec\n", getpid(), time);
 		sleep(time);
 		printf("%d finished after %d seconds\n", getpid(), time);
@@ -28,7 +28,7 @@ int main() {
 		if (child2PID == 0) {
 			unsigned int time;
 			fread(&time, sizeof(int), 1, file);
-			time = time % 5;
+			time = time % 5 + 1;
 			printf("%d %dsec\n", getpid(), time);
 			sleep(time);
 			printf("%d finished after %d seconds\n", getpid(), time);
