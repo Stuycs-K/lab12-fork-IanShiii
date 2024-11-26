@@ -20,7 +20,7 @@ int main() {
 		printf("%d %dsec\n", getpid(), time);
 		sleep(time);
 		printf("%d finished after %d seconds\n", getpid(), time);
-		return time;
+		exit(time);
 	}
 	else {
 		child2PID = fork();
@@ -32,7 +32,7 @@ int main() {
 			printf("%d %dsec\n", getpid(), time);
 			sleep(time);
 			printf("%d finished after %d seconds\n", getpid(), time);
-			return time;
+			exit(time);
 		}
 		else {
 			int status;
